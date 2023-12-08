@@ -164,9 +164,9 @@ packages:
     dependency: "direct dev"
     description:
       name: yumemi_lints
-      sha256: "26be81133ce2d6a6fe1d51a48950f703889b4e18aeb6a4a5b0221c6fe92b684e"
+      sha256: e1b31a16af21eb4df8440887780d6b224d43e3f9fc98fe659b9d731384f04431
       url: "https://pub.dev"
     source: hosted
-    version: "1.1.0"
+    version: "1.2.0"
 sdks:
   dart: ">=3.2.3 <4.0.0"
