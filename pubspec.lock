@@ -163,11 +163,10 @@ packages:
   yumemi_lints:
     dependency: "direct dev"
     description:
-      path: "."
-      ref: main
-      resolved-ref: "9f376d16ba01ca06e03ab45b0eea22d652a4c96b"
-      url: "https://github.com/yumemi-inc/flutter-yumemi-lints"
-    source: git
-    version: "1.1.0"
+      name: yumemi_lints
+      sha256: e1b31a16af21eb4df8440887780d6b224d43e3f9fc98fe659b9d731384f04431
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.2.0"
 sdks:
   dart: ">=3.2.3 <4.0.0"

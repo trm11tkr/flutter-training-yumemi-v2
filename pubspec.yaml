@@ -13,10 +13,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  yumemi_lints:
-    git:
-      url: https://github.com/yumemi-inc/flutter-yumemi-lints
-      ref: main
+  yumemi_lints: 1.2.0
 
 flutter:
   uses-material-design: true
