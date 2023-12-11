@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_training/router.dart';
+import 'package:flutter_training/utils/mixin/after_layout_mixin.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -11,11 +12,15 @@ class SplashPage extends StatefulWidget {
   State<SplashPage> createState() => _SplashPageState();
 }
 
-class _SplashPageState extends State<SplashPage> {
+class _SplashPageState extends State<SplashPage> with AfterLayoutMixin {
   static const _waitingTime = Duration(milliseconds: 500);
 
+  @override
+  void afterLayout() {
+    unawaited(_goToWeatherPage());
+  }
+
   Future<void> _goToWeatherPage() async {
-    await SchedulerBinding.instance.endOfFrame;
     await Future<void>.delayed(_waitingTime);
     if (!context.mounted) {
       return;
@@ -23,12 +28,6 @@ class _SplashPageState extends State<SplashPage> {
 
     await const WeatherRoute().push<void>(context);
 
-    unawaited(_goToWeatherPage());
-  }
-
-  @override
-  void initState() {
-    super.initState();
     unawaited(_goToWeatherPage());
   }
 
