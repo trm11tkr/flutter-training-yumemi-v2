@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_training/features/weather/weather_page.dart';
+import 'package:flutter_training/features/weather/splash/splash_page.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -7,7 +7,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: WeatherPage(),
+      home: SplashPage(),
     );
   }
 }
