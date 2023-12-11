@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_training/router.dart';
 import 'package:flutter_training/utils/mixin/after_layout_mixin.dart';
 
