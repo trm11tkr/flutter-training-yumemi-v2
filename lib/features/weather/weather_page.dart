@@ -43,9 +43,9 @@ class WeatherPage extends StatelessWidget {
               Flexible(
                 child: Column(
                   children: [
+                    const SizedBox(height: 80),
                     Row(
                       children: [
-                        const SizedBox(height: 80),
                         Expanded(
                           child: TextButton(
                             onPressed: () {},
