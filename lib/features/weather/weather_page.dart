@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_training/features/weather/temperature_text.dart';
+import 'package:flutter_training/features/weather/weather_condition.dart';
+import 'package:flutter_training/features/weather/weather_panel.dart';
+import 'package:yumemi_weather/yumemi_weather.dart';
 
 class WeatherPage extends StatefulWidget {
   const WeatherPage({super.key});
@@ -9,6 +12,8 @@ class WeatherPage extends StatefulWidget {
 }
 
 class _WeatherPageState extends State<WeatherPage> {
+  WeatherCondition? _weatherCondition;
+  final _yumemiWeather = YumemiWeather();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,13 +23,13 @@ class _WeatherPageState extends State<WeatherPage> {
           child: Column(
             children: [
               const Spacer(),
-              const Column(
+              Column(
                 children: [
                   AspectRatio(
                     aspectRatio: 1,
-                    child: Placeholder(),
+                    child: WeatherPanel(weatherCondition: _weatherCondition),
                   ),
-                  Padding(
+                  const Padding(
                     padding: EdgeInsets.symmetric(vertical: 16),
                     child: Row(
                       children: [
@@ -59,7 +64,14 @@ class _WeatherPageState extends State<WeatherPage> {
                         ),
                         Expanded(
                           child: TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              final newWeather = WeatherCondition.from(
+                                _yumemiWeather.fetchSimpleWeather(),
+                              );
+                              setState(() {
+                                _weatherCondition = newWeather;
+                              });
+                            },
                             child: const Text('Reload'),
                           ),
                         ),
