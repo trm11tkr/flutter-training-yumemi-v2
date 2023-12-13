@@ -27,7 +27,7 @@ class _SplashPageState extends State<SplashPage> with AfterLayoutMixin {
 
     await const WeatherRoute().push<void>(context);
 
-    unawaited(_goToWeatherPage());
+    unawaited(afterActionFrameCompletes());
   }
 
   @override

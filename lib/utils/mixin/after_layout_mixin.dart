@@ -9,10 +9,10 @@ mixin AfterLayoutMixin<T extends StatefulWidget> on State<T> {
   @override
   void initState() {
     super.initState();
-    unawaited(_afterActionFrameCompletes());
+    unawaited(afterActionFrameCompletes());
   }
 
-  Future<void> _afterActionFrameCompletes() async {
+  Future<void> afterActionFrameCompletes() async {
     await SchedulerBinding.instance.endOfFrame;
     afterLayout();
   }
